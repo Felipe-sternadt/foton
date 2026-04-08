@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foton Caminhões | Força e Tecnologia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+    <!-- ==============================
+         SMART NAVBAR (FIXA E INTELIGENTE)
+         ============================== -->
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+                    <img src="assets/logo_foton.png" alt="Foton Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#modelos">Novos</a></li>
+                <li><a href="#seminovos">Seminovos</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Peças e Acessórios</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn-nav">SOLICITE COTAÇÃO</a>
+                <a href="#" class="btn-nav">WHATSAPP</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==============================
+         SECTION 1: HERO 
+         ============================== -->
+    <section class="hero" id="home">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="assets/background.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-text-wrapper">
+                <h1 class="main-title">
+                    <span class="typing-text line-1">Força Que Move,</span><br>
+                    <span class="typing-text line-2">Eficiência Que Lidera.</span>
+                </h1>
+                <p class="sub-title">Descubra a tecnologia Foton. Projetados para superar desafios e maximizar a rentabilidade do seu transporte no dia a dia.</p>
+            </div>
+            <div class="bottom-action-area">
+                <div class="action-buttons">
+                    <button class="btn-pill blue">Telefones</button>
+                    <button class="btn-pill outline">Localização</button>
+                </div>
+                <p class="action-description">
+                    Atendimento especializado e suporte técnico em todo o território nacional. 
+                    Encontre sua Foton e sinta a diferença na estrada.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================
+         SECTION 2: MODELOS
+         ============================== -->
+    <section class="models-section" id="modelos">
+        <div class="models-container">
+            
+            <div class="models-header">
+                <h2 class="section-title">
+                    <span class="typing-models">NOSSOS MODELOS 0KM</span>
+                </h2>
+            </div>
+
+            <div class="slider-wrapper">
+                <button id="prevBtn" class="control-btn prev-btn" disabled>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+
+                <div class="slider-viewport">
+                    <div class="slider-track" id="sliderTrack">
+                        
+                        <div class="model-card">
+                            <div class="card-img"><img src="assets/modelo_1.webp" alt="AUMARK S 315"></div>
+                            <span class="card-number">01</span>
+                            <h3 class="card-title">AUMARK S 315</h3>
+                            <p class="card-desc">Agilidade urbana com eficiência máxima para entregas ágeis.</p>
+                            <div class="card-actions">
+                                <button class="action-btn btn-detalhes">Detalhes</button>
+                                <button class="action-btn btn-cotacao">Cotação</button>
+                                <button class="action-btn btn-test">Test Drive</button>
+                            </div>
+                        </div>
+                        <div class="model-card">
+                            <div class="card-img"><img src="assets/modelo_2.webp" alt="AUMARK S 715/916/1217"></div>
+                            <span class="card-number">02</span>
+                            <h3 class="card-title">AUMARK S 715/916/1217</h3>
+                            <p class="card-desc">Versatilidade e robustez para curtas e médias distâncias.</p>
+                            <div class="card-actions">
+                                <button class="action-btn btn-detalhes">Detalhes</button>
+                                <button class="action-btn btn-cotacao">Cotação</button>
+                                <button class="action-btn btn-test">Test Drive</button>
+                            </div>
+                        </div>
+                        <div class="model-card">
+                            <div class="card-img"><img src="assets/modelo_3.webp" alt="IBLUE"></div>
+                            <span class="card-number">03</span>
+                            <h3 class="card-title">IBLUE</h3>
+                            <p class="card-desc">O futuro do transporte: 100% elétrico, limpo e sustentável.</p>
+                            <div class="card-actions">
+                                <button class="action-btn btn-detalhes">Detalhes</button>
+                                <button class="action-btn btn-cotacao">Cotação</button>
+                                <button class="action-btn btn-test">Test Drive</button>
+                            </div>
+                        </div>
+                        <div class="model-card">
+                            <div class="card-img"><img src="assets/modelo_4.webp" alt="AUMAN D 1722"></div>
+                            <span class="card-number">04</span>
+                            <h3 class="card-title">AUMAN D 1722</h3>
+                            <p class="card-desc">Força bruta para operações severas e as cargas mais exigentes.</p>
+                            <div class="card-actions">
+                                <button class="action-btn btn-detalhes">Detalhes</button>
+                                <button class="action-btn btn-cotacao">Cotação</button>
+                                <button class="action-btn btn-test">Test Drive</button>
+                            </div>
+                        </div>
+                        <div class="model-card">
+                            <div class="card-img"><img src="assets/modelo_5.webp" alt="TUNLAND"></div>
+                            <span class="card-number">05</span>
+                            <h3 class="card-title">TUNLAND</h3>
+                            <p class="card-desc">Picape tecnológica pronta para enfrentar qualquer terreno.</p>
+                            <div class="card-actions">
+                                <button class="action-btn btn-detalhes">Detalhes</button>
+                                <button class="action-btn btn-cotacao">Cotação</button>
+                                <button class="action-btn btn-test">Test Drive</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button id="nextBtn" class="control-btn next-btn">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+<!-- ==============================
+         SECTION 3: SEMINOVOS 
+         ============================== -->
+    <section class="seminovos-section" id="seminovos">
+        <div class="semi-container">
+            
+            <div class="semi-content">
+                <!-- Título com animação de Typing -->
+                <h2 class="semi-title">SEMINOVOS</h2>
+                
+                <div class="semi-divider"></div>
+                
+                <!-- Texto descritivo com animação de slide -->
+                <p class="semi-text">
+                    Nossa seleção de seminovos oferece a mesma robustez e confiança que você espera de um Foton 0km. 
+                    Cada veículo passa por uma rigorosa inspeção técnica para garantir que sua operação nunca pare. 
+                    Encontre a melhor relação custo-benefício para expandir sua frota com segurança.
+                </p>
+
+                <!-- Botão com animação de slide -->
+                <button class="semi-btn">VER ESTOQUE COMPLETO</button>
+            </div>
+
+            <!-- Imagem lateral -->
+            <div class="semi-image-wrapper">
+                <img src="assets/section_3.jpg" alt="Seminovos Foton">
+            </div>
+
+        </div>
+    </section>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
