@@ -152,3 +152,101 @@ document.querySelectorAll('.models-section, .seminovos-section')
     setTimeout(updateSlider, 100);
 
 });
+/* =======================================================
+       4. API DO IBGE (ESTADOS E CIDADES DO CONTATO)
+       ======================================================= */
+    const estadoSelect = document.getElementById('estadoSelect');
+    const cidadeSelect = document.getElementById('cidadeSelect');
+
+    if (estadoSelect && cidadeSelect) {
+        // 1. Carrega todos os Estados do Brasil
+        fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
+            .then(res => res.json())
+            .then(estados => {
+                estadoSelect.innerHTML = '<option value="" disabled selected>Selecione o estado</option>';
+                estados.forEach(estado => {
+                    const option = document.createElement('option');
+                    option.value = estado.sigla; // Vai mandar a sigla (SC, SP, etc)
+                    option.textContent = estado.nome;
+                    estadoSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error("Erro ao buscar estados:", error);
+                estadoSelect.innerHTML = '<option value="" disabled>Erro ao carregar</option>';
+            });
+
+        // 2. Quando o usuário escolher um Estado, carrega as Cidades dele
+        estadoSelect.addEventListener('change', (e) => {
+            const uf = e.target.value;
+            
+            // Reseta e mostra estado de "carregando"
+            cidadeSelect.innerHTML = '<option value="" disabled selected>Carregando cidades...</option>';
+            cidadeSelect.disabled = true;
+
+            fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
+                .then(res => res.json())
+                .then(cidades => {
+                    cidadeSelect.innerHTML = '<option value="" disabled selected>Selecione a cidade</option>';
+                    cidades.forEach(cidade => {
+                        const option = document.createElement('option');
+                        option.value = cidade.nome;
+                        option.textContent = cidade.nome;
+                        cidadeSelect.appendChild(option);
+                    });
+                    cidadeSelect.disabled = false; // Habilita o select de cidades
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar cidades:", error);
+                    cidadeSelect.innerHTML = '<option value="" disabled>Erro ao carregar</option>';
+                });
+       /* =======================================================
+       4. API DO IBGE (ESTADOS E CIDADES DO CONTATO)
+       ======================================================= */
+    const estadoSelect = document.getElementById('estadoSelect');
+    const cidadeSelect = document.getElementById('cidadeSelect');
+
+    if (estadoSelect && cidadeSelect) {
+        // Busca Estados
+        fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
+            .then(res => res.json())
+            .then(estados => {
+                estadoSelect.innerHTML = '<option value="" disabled selected>Selecione o estado</option>';
+                estados.forEach(estado => {
+                    const option = document.createElement('option');
+                    option.value = estado.sigla;
+                    option.textContent = estado.nome;
+                    estadoSelect.appendChild(option);
+                });
+            })
+            .catch(() => {
+                estadoSelect.innerHTML = '<option value="" disabled>Erro ao carregar</option>';
+            });
+
+        // Busca Cidades ao selecionar o Estado
+        estadoSelect.addEventListener('change', (e) => {
+            const uf = e.target.value;
+            cidadeSelect.innerHTML = '<option value="" disabled selected>Carregando...</option>';
+            cidadeSelect.disabled = true;
+
+            fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
+                .then(res => res.json())
+                .then(cidades => {
+                    cidadeSelect.innerHTML = '<option value="" disabled selected>Selecione a cidade</option>';
+                    cidades.forEach(cidade => {
+                        const option = document.createElement('option');
+                        option.value = cidade.nome;
+                        option.textContent = cidade.nome;
+                        cidadeSelect.appendChild(option);
+                    });
+                    cidadeSelect.disabled = false;
+                })
+                .catch(() => {
+                    cidadeSelect.innerHTML = '<option value="" disabled>Erro ao carregar</option>';
+                });
+        });
+    }
+            });
+   
+   
+    }

@@ -179,6 +179,185 @@
 
         </div>
     </section>
+    <!-- ==============================
+         SECTION 4: CONTATO 
+         ============================== -->
+    <section class="contato-section" id="contato">
+        <div class="contato-container">
+            
+            <!-- Lado Esquerdo: Textos e Endereços -->
+            <div class="contato-info">
+                <h2 class="contato-main-title">FALE CONOSCO</h2>
+                <h3 class="contato-subtitle">Aonde Estamos</h3>
+                
+                <div class="unidade-card">
+                    <div class="unidade-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-foton)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <h4>Palhoça SC</h4>
+                    </div>
+                    <p>Marginal sentido norte, BR-101, km 214 - Centro<br>Palhoça - SC, 88131-390.</p>
+                    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
+                </div>
+
+                <div class="unidade-card">
+                    <div class="unidade-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-foton)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <h4>Joinville SC</h4>
+                    </div>
+                    <p>BR-101, nº 13230 - Glória<br>Joinville - SC, 89216-500.</p>
+                    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Formulário Premium Flutuante -->
+            <div class="contato-form-wrapper">
+                <form class="contato-form">
+                    <h3 class="form-title">Sua Mensagem</h3>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Nome *</label>
+                            <input type="text" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email *</label>
+                            <input type="email" placeholder="Seu email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Telefone *</label>
+                            <input type="tel" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Unidade *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecione a unidade</option>
+                                <option value="Palhoça SC">Palhoça SC</option>
+                                <option value="Joinville SC">Joinville SC</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Estado *</label>
+                            <select id="estadoSelect" required>
+                                <option value="" disabled selected>Carregando estados...</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Cidade *</label>
+                            <select id="cidadeSelect" required disabled>
+                                <option value="" disabled selected>Selecione o estado primeiro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Modelo *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecione o modelo</option>
+                                <option value="Aumark S 315">Aumark S 315</option>
+                                <option value="Aumark S 715/916/1217">Aumark S 715/916/1217</option>
+                                <option value="IBlue">IBlue</option>
+                                <option value="Auman D 1722">Auman D 1722</option>
+                                <option value="Tunland">Tunland</option>
+                                <option value="eWonder">eWonder</option>
+                                <option value="eToano Pro">eToano Pro</option>
+                                <option value="eView Grand">eView Grand</option>
+                                <option value="eView Connect">eView Connect</option>
+                                <option value="eAumark">eAumark</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Departamento *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecione o departamento</option>
+                                <option value="Veículos Novos">Veículos Novos</option>
+                                <option value="Veículos Seminovos">Veículos Seminovos</option>
+                                <option value="Peças e acessórios">Peças e acessórios</option>
+                                <option value="Serviços">Serviços</option>
+                                <option value="Vendas Diretas">Vendas Diretas</option>
+                                <option value="Consórcio">Consórcio</option>
+                                <option value="Seguros">Seguros</option>
+                                <option value="Institucional">Institucional</option>
+                                <option value="Contato">Contato</option>
+                                <option value="Trabalhe Conosco">Trabalhe Conosco</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>Mensagem *</label>
+                        <textarea placeholder="Especifique o que você precisa..." rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">SOLICITAR AGORA</button>
+                </form>
+            </div>
+        </div>
+
+       <!-- Mapas Lado a Lado (Espaçamentos iguais e Endereços Corretos) -->
+        <div class="maps-container">
+            <div class="map-box">
+                <iframe src="https://maps.google.com/maps?q=Marginal%20sentido%20norte,%20BR-101,%20km%20214%20-%20Centro,%20Palho%C3%A7a%20-%20SC,%2088131-390&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+            <div class="map-box">
+                <iframe src="https://maps.google.com/maps?q=BR-101,%20n%C2%BA%2013230%20-%20Gl%C3%B3ria,%20Joinville%20-%20SC,%2089216-500&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================
+         FOOTER (Com nova seção de Cotação)
+         ============================== -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+                    <img src="assets/logo_foton.png" alt="Foton Logo" class="footer-logo">
+                </a>
+                <p>Força que move, Eficiência que Lidera.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Principais Serviços</h4>
+                <ul>
+                    <li><a href="#modelos">Veículos Novos</a></li>
+                    <li><a href="#seminovos">Seminovos Inspecionados</a></li>
+                    <li><a href="#">Peças e Acessórios</a></li>
+                    <li><a href="#">Serviços e Revisão</a></li>
+                </ul>
+            </div>
+
+            <!-- NOVA SEÇÃO: Solicite Cotação -->
+            <div class="footer-quote">
+                <h4>Pronto para acelerar?</h4>
+                <p>Garanta as melhores condições para expandir sua frota.</p>
+                <a href="#contato" class="btn-footer-quote">Solicite Cotação</a>
+            </div>
+
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© Copyright 2026 - Someval Foton. Todos os direitos reservados.</p>
+            <p class="watermark">Desenvolvido por <span>Felipe Sternadt</span></p>
+        </div>
+    </footer>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
