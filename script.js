@@ -301,3 +301,142 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 }); // Fim do DOMContentLoaded (Tudo deve ficar antes desta linha)
+
+/* =======================================================
+   FUNÇÕES DA GALERIA DO AUMARK S 315
+   ======================================================= */
+function changeGalleryImage(thumbnail) {
+    // 1. Muda a imagem principal
+    const mainImg = document.getElementById('mainGalleryImg');
+    mainImg.style.opacity = 0; // Faz um pequeno "piscar" elegante
+    
+    setTimeout(() => {
+        mainImg.src = thumbnail.src;
+        mainImg.style.opacity = 1;
+    }, 150);
+
+    // 2. Remove a classe 'active' de todas as miniaturas visíveis
+    const allThumbs = document.querySelectorAll('#galleryThumbnails .thumb');
+    allThumbs.forEach(t => t.classList.remove('active'));
+
+    // 3. Adiciona 'active' na miniatura clicada
+    thumbnail.classList.add('active');
+}
+
+function filterGallery(type, btn) {
+    // 1. Atualiza os botões laterais (Exterior / Interior)
+    const allBtns = document.querySelectorAll('.sidebar-btn');
+    allBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // 2. Filtra as miniaturas
+    const allThumbs = document.querySelectorAll('#galleryThumbnails .thumb');
+    let firstVisibleThumb = null;
+
+    allThumbs.forEach(thumb => {
+        if (thumb.getAttribute('data-type') === type) {
+            thumb.style.display = 'block';
+            if (!firstVisibleThumb) firstVisibleThumb = thumb; // Guarda a primeira imagem da categoria
+        } else {
+            thumb.style.display = 'none';
+        }
+    });
+
+    // 3. Clica automaticamente na primeira imagem da nova categoria escolhida
+    if (firstVisibleThumb) {
+        changeGalleryImage(firstVisibleThumb);
+    }
+}
+/* =======================================================
+   FUNÇÕES DA SEÇÃO DE VERSÕES E ACORDEÃO
+   ======================================================= */
+
+// 1. Função para trocar a Aba da Versão (MT / AMT) mantendo o estado do acordeão
+function selectVersion(versionId, selectedTab) {
+    const allSpecs = document.querySelectorAll('.specs-accordion');
+    let openIndex = -1;
+
+    // A) Antes de trocar, verifica se existe algum item aberto e salva o índice dele
+    allSpecs.forEach(spec => {
+        if (getComputedStyle(spec).display !== 'none') {
+            const items = spec.querySelectorAll('.accordion-item');
+            items.forEach((item, index) => {
+                if (item.classList.contains('active')) {
+                    openIndex = index;
+                }
+            });
+        }
+    });
+
+    // B) Troca o visual das abas
+    const tabs = document.querySelectorAll('.version-tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    selectedTab.classList.add('active');
+    
+    // C) Esconde todos os grupos de especificações
+    allSpecs.forEach(spec => {
+        spec.style.display = 'none';
+    });
+
+    // D) Mostra a versão selecionada e sincroniza o item aberto
+    const activeSpec = document.getElementById('specs-' + versionId);
+    if (activeSpec) {
+        activeSpec.style.display = 'flex';
+
+        // E) Se havia um item aberto, abre o mesmo índice na nova aba
+        if (openIndex !== -1) {
+            const newItems = activeSpec.querySelectorAll('.accordion-item');
+            if (newItems[openIndex]) {
+                const targetItem = newItems[openIndex];
+                const targetContent = targetItem.querySelector('.accordion-content');
+                
+                // Remove 'active' de qualquer outro item que pudesse estar aberto por erro
+                newItems.forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.accordion-content').style.maxHeight = null;
+                });
+
+                targetItem.classList.add('active');
+                
+                // Timeout para garantir que o display 'flex' foi processado antes de medir scrollHeight
+                setTimeout(() => {
+                    targetContent.style.maxHeight = targetContent.scrollHeight + 50 + "px";
+                }, 50);
+            }
+        }
+    }
+}
+
+// 2. Função para abrir/fechar as caixas do Acordeão (APENAS NO CLIQUE)
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    
+    header.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Buscamos o conteúdo e os outros itens dentro do MESMO acordeão visível
+        const parentAccordion = item.closest('.specs-accordion');
+        const content = item.querySelector('.accordion-content');
+        const allSiblingItems = parentAccordion.querySelectorAll('.accordion-item');
+
+        if (item.classList.contains('active')) {
+            // Se clicar no que já está aberto, ele fecha
+            item.classList.remove('active');
+            content.style.maxHeight = null;
+        } else {
+            // Fecha todos os outros itens do mesmo grupo antes de abrir o novo
+            allSiblingItems.forEach(sibling => {
+                sibling.classList.remove('active');
+                sibling.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            // Abre o item clicado
+            item.classList.add('active');
+            setTimeout(() => {
+                content.style.maxHeight = content.scrollHeight + 50 + "px";
+            }, 10);
+        }
+    });
+});

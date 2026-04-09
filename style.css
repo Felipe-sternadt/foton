@@ -762,3 +762,567 @@ html {
 .aumark-page .navbar-container {
     padding: 30px 60px;
 }
+/* =========================================================
+   SEÇÃO DE ESPECIFICAÇÕES (AUMARK S 315)
+   ========================================================= */
+.aumark-specs-section {
+    background-color: #ffffff;
+    padding: 100px 110px;
+    position: relative;
+    z-index: 10;
+}
+
+.specs-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 80px;
+}
+
+.specs-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-number {
+    font-size: 5.5rem;
+    font-weight: 300;
+    color: var(--azul-hover); /* ou preto para parecer a porsche */
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
+}
+
+.spec-unit {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.spec-desc {
+    font-size: 1rem;
+    color: #475569;
+    margin-top: 10px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* Botões */
+
+
+.specs-image {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.specs-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .aumark-specs-section { padding: 60px 40px; }
+    .specs-container { flex-direction: column; text-align: center; gap: 50px; }
+    .spec-desc { margin: 10px auto 0; }
+    .specs-buttons { justify-content: center; flex-direction: column; }
+}
+/* =========================================================
+   BOTÕES DA HERO (ABAIXO DO TÍTULO AUMARK S 315)
+   ========================================================= */
+.showcase-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -5px; /* Puxa os botões um pouco para perto do título */
+    margin-bottom: 35px; /* Espaço antes das badges */
+}
+
+.btn-showcase {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--azul-foton);
+}
+
+.btn-showcase.solid {
+    background-color: var(--azul-foton);
+    color: #ffffff;
+}
+
+.btn-showcase.solid:hover {
+    background-color: var(--azul-destaque);
+    border-color: var(--azul-destaque);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 179, 255, 0.4);
+}
+
+.btn-showcase.outline {
+    background-color: transparent;
+    color: var(--azul-foton);
+}
+
+.btn-showcase.outline:hover {
+    background-color: var(--azul-foton);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 45, 114, 0.2);
+}
+
+/* Ajuste de responsividade para os novos botões */
+@media (max-width: 1024px) {
+    .showcase-actions {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .btn-showcase {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* =========================================================
+   GALERIA PREMIUM (INCOMPARÁVEL POR DENTRO E POR FORA)
+   ========================================================= */
+.gallery-section {
+    background-color: #ffffff;
+    padding: 80px 60px 120px 60px;
+    color: #000;
+}
+
+.gallery-main-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+}
+
+.gallery-layout {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+/* Lado da Imagem (Esquerda) */
+.gallery-viewer {
+    flex: 1; /* Ocupa o maior espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-main-img {
+    width: 100%;
+    aspect-ratio: 16/9; /* Proporção de tela cheia/cinema */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.gallery-main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Miniaturas */
+.gallery-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+    height: 6px;
+}
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.thumb {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumb:hover {
+    opacity: 0.8;
+}
+
+.thumb.active {
+    opacity: 1;
+    border-color: var(--azul-foton); /* Destaca a selecionada */
+}
+
+/* Painel Lateral (Direita - Estilo Porsche) */
+.gallery-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.sidebar-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 15px;
+}
+
+.sidebar-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.icon-minus {
+    width: 15px;
+    height: 2px;
+    background-color: #9ca3af;
+}
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-btn {
+    background-color: transparent;
+    border: 1px solid #d1d5db;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-btn:hover {
+    border-color: #9ca3af;
+    background-color: #f9fafb;
+}
+
+.sidebar-btn.active {
+    border-color: var(--azul-foton);
+    background-color: var(--azul-foton);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 45, 114, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .gallery-layout { flex-direction: column; }
+    .gallery-sidebar { width: 100%; }
+    .gallery-main-title { font-size: 2.2rem; }
+    .gallery-section { padding: 50px 20px; }
+}
+
+/* =========================================================
+   SESSÃO DE VERSÕES E DETALHES (ACORDEÃO PREMIUM)
+   ========================================================= */
+.versions-section {
+    background-color: #f8fafc; /* Fundo levemente cinza para contrastar com o branco */
+    padding: 80px 60px 100px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.versions-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--azul-hover);
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Abas de Versões (Topo) */
+.versions-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 60px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+}
+
+.version-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.4s var(--bezier);
+    position: relative;
+}
+
+.version-tab img {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.4s var(--bezier);
+}
+
+.version-tab span {
+    font-size: 1rem;
+    color: #475569;
+    text-align: center;
+    font-weight: 500;
+}
+
+.version-tab span strong {
+    font-size: 1.2rem;
+    color: var(--azul-foton);
+}
+
+.version-tab:hover {
+    opacity: 0.8;
+}
+
+.version-tab.active {
+    opacity: 1;
+}
+
+.version-tab.active img {
+    transform: scale(1.05);
+}
+
+/* Linha azul abaixo da versão selecionada */
+.version-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -22px; /* Encosta na borda do container */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--azul-foton);
+}
+
+/* Acordeão (Lista de Especificações) */
+.specs-accordion {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.accordion-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    /* Adicionada a transição de transform para o efeito de zoom */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s var(--bezier);
+    transform-origin: center;
+}
+
+/* Efeito Hover: Aumenta a box, os textos e muda a cor */
+/* Removemos o :hover que aumentava a caixa, deixando o comportamento base limpo */
+.accordion-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    /* Adicionada a transição de 'margin' para o efeito de expansão lateral */
+    transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s var(--bezier), margin 0.4s var(--bezier);
+    margin: 0; 
+}
+
+/* NOVO: A caixa aumenta e ganha sombra APENAS quando for CLICADA/ABERTA */
+/* CAIXA ABERTA: Expande para os lados e afasta das outras */
+.accordion-item.active {
+    box-shadow: 0 20px 45px rgba(0, 45, 114, 0.12);
+    border-color: var(--azul-foton);
+    /* O margin negativo faz a caixa "vazar" para os lados, ficando mais larga que as outras */
+    margin: 15px -30px; 
+    transform: scale(1.01); /* Zoom bem de leve só para dar volume */
+    border-radius: 14px;
+    z-index: 2;
+    position: relative;
+}
+
+/* NOVO: Dobra o tamanho dos textos quando a caixa estiver aberta */
+.accordion-item.active .spec-details-list li {
+    font-size: 1.15rem; /* Aumento sutil e premium */
+    padding-bottom: 15px;
+    line-height: 1.5;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accordion-item.active .spec-details-list li span {
+    font-weight: 500;
+}
+
+.accordion-item.active .spec-details-list li strong {
+    font-size: 1.2rem; /* Destaque leve no valor */
+    color: var(--azul-foton);
+}
+
+/* Opcional: Aumenta o tamanho do cabeçalho "Motor" quando aberto */
+.accordion-item.active .accordion-header {
+    font-size: 1.4rem; 
+}
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    padding: 22px 30px;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: color 0.3s ease;
+}
+
+.accordion-item.active .accordion-header {
+    color: var(--azul-foton);
+}
+
+/* Ícone de + e - animado */
+.accordion-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.accordion-icon::before {
+    top: 7px; left: 0; width: 16px; height: 2px;
+}
+
+.accordion-icon::after {
+    top: 0; left: 7px; width: 2px; height: 16px;
+}
+
+/* Quando ativo, gira o ícone e esconde o traço vertical para virar um "-" */
+.accordion-item.active .accordion-icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.accordion-item.active .accordion-icon::before {
+    background-color: var(--azul-foton);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s var(--bezier);
+}
+
+.accordion-inner {
+    padding: 0 30px 25px 30px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .versions-section { padding: 60px 20px; }
+    .versions-tabs { gap: 20px; flex-direction: column; border-bottom: none; }
+    .version-tab.active::after { display: none; }
+    .version-tab img { width: 180px; }
+}
+
+/* Lista de Especificações Interna */
+.spec-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.spec-details-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 10px;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.spec-details-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.spec-details-list li span {
+    font-weight: 500;
+}
+
+.spec-details-list li strong {
+    color: var(--azul-hover);
+    font-weight: 800;
+    text-align: right;
+    max-width: 55%;
+}
+
+@media (max-width: 768px) {
+    .spec-details-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .spec-details-list li strong {
+        text-align: left;
+        max-width: 100%;
+        color: var(--azul-foton);
+    }
+}
