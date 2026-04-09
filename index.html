@@ -24,13 +24,13 @@
                 <li><a href="#seminovos">Seminovos</a></li>
                 <li><a href="#">Serviços</a></li>
                 <li><a href="#">Peças e Acessórios</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Contato</a></li>
+
+                <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="nav-buttons">
-                <a href="#" class="btn-nav">SOLICITE COTAÇÃO</a>
-                <a href="#" class="btn-nav">WHATSAPP</a>
-            </div>
+           <div class="nav-buttons">
+    <a href="#contato" class="btn-nav">SOLICITE COTAÇÃO</a>
+    <a href="#" class="btn-nav">WHATSAPP</a>
+</div>
         </nav>
     </header>
 
@@ -52,10 +52,10 @@
                 <p class="sub-title">Descubra a tecnologia Foton. Projetados para superar desafios e maximizar a rentabilidade do seu transporte no dia a dia.</p>
             </div>
             <div class="bottom-action-area">
-                <div class="action-buttons">
-                    <button class="btn-pill blue">Telefones</button>
-                    <button class="btn-pill outline">Localização</button>
-                </div>
+              <div class="action-buttons">
+    <button class="btn-pill blue" id="btnOpenTelefones">Telefones</button>
+    <button class="btn-pill outline" onclick="window.location.href='#contato'">Localização</button>
+</div>
                 <p class="action-description">
                     Atendimento especializado e suporte técnico em todo o território nacional. 
                     Encontre sua Foton e sinta a diferença na estrada.
@@ -84,17 +84,17 @@
                 <div class="slider-viewport">
                     <div class="slider-track" id="sliderTrack">
                         
-                        <div class="model-card">
-                            <div class="card-img"><img src="assets/modelo_1.webp" alt="AUMARK S 315"></div>
-                            <span class="card-number">01</span>
-                            <h3 class="card-title">AUMARK S 315</h3>
-                            <p class="card-desc">Agilidade urbana com eficiência máxima para entregas ágeis.</p>
-                            <div class="card-actions">
-                                <button class="action-btn btn-detalhes">Detalhes</button>
-                                <button class="action-btn btn-cotacao">Cotação</button>
-                                <button class="action-btn btn-test">Test Drive</button>
-                            </div>
-                        </div>
+                       <div class="model-card" onclick="window.location.href='aumark-s-315.html'" style="cursor: pointer;">
+    <div class="card-img"><img src="assets/modelo_1.webp" alt="AUMARK S 315"></div>
+    <span class="card-number">01</span>
+    <h3 class="card-title">AUMARK S 315</h3>
+    <p class="card-desc">Agilidade urbana com eficiência máxima para entregas ágeis.</p>
+    <div class="card-actions">
+        <button class="action-btn btn-detalhes" onclick="event.stopPropagation(); window.location.href='aumark-s-315.html'">Detalhes</button>
+        <button class="action-btn btn-cotacao" onclick="event.stopPropagation();">Cotação</button>
+        <button class="action-btn btn-test" onclick="event.stopPropagation();">Test Drive</button>
+    </div>
+</div>
                         <div class="model-card">
                             <div class="card-img"><img src="assets/modelo_2.webp" alt="AUMARK S 715/916/1217"></div>
                             <span class="card-number">02</span>
@@ -190,23 +190,25 @@
                 <h2 class="contato-main-title">FALE CONOSCO</h2>
                 <h3 class="contato-subtitle">Aonde Estamos</h3>
                 
-                <div class="unidade-card">
-                    <div class="unidade-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-foton)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <h4>Palhoça SC</h4>
-                    </div>
-                    <p>Marginal sentido norte, BR-101, km 214 - Centro<br>Palhoça - SC, 88131-390.</p>
-                    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
-                </div>
+               <div class="unidade-card">
+    <div class="unidade-header">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-destaque)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <h4>Palhoça SC</h4>
+    </div>
+    <p>Marginal sentido norte, BR-101, km 214 - Centro<br>Palhoça - SC, 88131-390.</p>
+    <p class="telefone-unidade"><strong>Telefone Geral:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
+    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
+</div>
 
-                <div class="unidade-card">
-                    <div class="unidade-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-foton)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <h4>Joinville SC</h4>
-                    </div>
-                    <p>BR-101, nº 13230 - Glória<br>Joinville - SC, 89216-500.</p>
-                    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
-                </div>
+<div class="unidade-card">
+    <div class="unidade-header">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-destaque)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <h4>Joinville SC</h4>
+    </div>
+    <p>BR-101, nº 13230 - Glória<br>Joinville - SC, 89216-500.</p>
+    <p class="telefone-unidade"><strong>Telefone:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
+    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
+</div>
             </div>
 
             <!-- Lado Direito: Formulário Premium Flutuante -->
@@ -301,19 +303,16 @@
         </div>
 
        <!-- Mapas Lado a Lado (Espaçamentos iguais e Endereços Corretos) -->
-        <div class="maps-container">
+       <div class="maps-container">
             <div class="map-box">
-                <iframe src="https://maps.google.com/maps?q=Marginal%20sentido%20norte,%20BR-101,%20km%20214%20-%20Centro,%20Palho%C3%A7a%20-%20SC,%2088131-390&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/maps?q=BR-101,%20km%20214%20-%20Centro,%20Palho%C3%A7a%20-%20SC,%2088131-390&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
             </div>
             <div class="map-box">
-                <iframe src="https://maps.google.com/maps?q=BR-101,%20n%C2%BA%2013230%20-%20Gl%C3%B3ria,%20Joinville%20-%20SC,%2089216-500&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/maps?q=BR-101,%2013230%20-%20Gl%C3%B3ria,%20Joinville%20-%20SC,%2089216-500&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- ==============================
-         FOOTER (Com nova seção de Cotação)
-         ============================== -->
     <footer class="footer-section">
         <div class="footer-content">
             <div class="footer-brand">
@@ -333,7 +332,6 @@
                 </ul>
             </div>
 
-            <!-- NOVA SEÇÃO: Solicite Cotação -->
             <div class="footer-quote">
                 <h4>Pronto para acelerar?</h4>
                 <p>Garanta as melhores condições para expandir sua frota.</p>
@@ -355,11 +353,35 @@
         
         <div class="footer-bottom">
             <p>© Copyright 2026 - Someval Foton. Todos os direitos reservados.</p>
-            <p class="watermark">Desenvolvido por <span>Felipe Sternadt</span></p>
+            <p class="watermark">Desenvolvido por <span class="dev-name">Felipe Sternadt</span></p>
         </div>
     </footer>
+
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
-</body>
+    <div id="modalTelefones" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close" id="btnCloseTelefones">&times;</button>
+        <h3>Telefones de Contato</h3>
+        
+        <div class="modal-item">
+            <div class="modal-item-info">
+                <strong>Palhoça | SC</strong>
+                <span>Geral: (48) 3621-0150</span>
+            </div>
+            <a href="tel:4836210150" class="btn-call">Ligar Agora</a>
+        </div>
 
+        <div class="modal-divider"></div>
+
+        <div class="modal-item">
+            <div class="modal-item-info">
+                <strong>Joinville | SC</strong>
+                <span>(48) 3621-0150</span>
+            </div>
+            <a href="tel:4836210150" class="btn-call">Ligar Agora</a>
+        </div>
+    </div>
+</div>
+</body>
 </html>

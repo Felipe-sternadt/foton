@@ -289,13 +289,32 @@ html {
     overflow-y: scroll;
 }
 /* =========================================================
-   SECTION 4: CONTATO (BASEADO NO ANEXO)
+   SECTION 4: CONTATO & MAPAS (TEMA FOTON ORIGINAL)
    ========================================================= */
 .contato-section {
     position: relative;
     z-index: 3;
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff; /* Fundo branco limpo */
     padding-top: 100px;
+}
+
+.contato-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contato-main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--azul-foton); /* Azul principal da marca */
+    text-transform: uppercase;
+}
+
+.contato-subtitle {
+    font-size: 1.8rem;
+    color: #334155;
+    margin-bottom: 40px;
 }
 
 .contato-container {
@@ -306,6 +325,7 @@ html {
     gap: 60px;
     position: relative;
     z-index: 10;
+    margin-bottom: -120px; /* Sobrepõe os mapas elegantemente */
 }
 
 /* Esquerda: Infos de Endereço */
@@ -314,57 +334,53 @@ html {
     padding-top: 40px;
 }
 
-.contato-main-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--azul-foton);
-    margin-bottom: 10px;
-}
-
-.contato-subtitle {
-    font-size: 1.8rem;
-    color: #334155;
-    margin-bottom: 40px;
-}
-
 .unidade-card {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
 }
 
 .unidade-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.unidade-header svg {
+    stroke: var(--azul-destaque); /* Azul claro */
 }
 
 .unidade-header h4 {
     font-size: 1.3rem;
-    color: var(--azul-hover);
-    font-weight: 700;
+    color: var(--azul-foton); /* Azul principal */
+    font-weight: 800;
 }
 
+/* Textos do endereço agora estão em Preto para leitura perfeita */
 .unidade-card p {
     font-size: 1rem;
-    color: #475569;
+    color: #000000; /* Cor preta */
     line-height: 1.6;
     margin-left: 34px;
+    font-weight: 600; /* Deixei um pouco mais encorpado */
 }
 
+/* Horário também em Preto */
 .unidade-card .horario {
     margin-top: 10px;
-    font-size: 0.9rem;
-    color: #64748b;
+    font-size: 0.95rem;
+    color: #000000; /* Cor preta */
+    font-weight: 500;
 }
 
-/* Direita: Formulário Flutuante Premium */
+/* Direita: Formulário Flutuante com a Sombra Nova */
 .contato-form-wrapper {
     flex: 1.2;
-    background-color: var(--azul-hover); /* Fundo escuro igual ao anexo */
+    background-color: var(--azul-hover); 
     padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 30px 60px rgba(0, 45, 114, 0.15);
-    transform: translateY(20px); /* Leve sobreposição */
+    /* Sombra mais forte, densa e com um leve brilho azul ao redor para destacar bem */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 45, 114, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .form-title {
@@ -392,8 +408,9 @@ html {
 
 .contato-form label {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .contato-form input,
@@ -401,7 +418,7 @@ html {
 .contato-form textarea {
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
     padding: 10px 0;
     font-family: inherit;
@@ -412,7 +429,7 @@ html {
 
 .contato-form input::placeholder,
 .contato-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .contato-form input:focus,
@@ -426,9 +443,10 @@ html {
     color: #ffffff;
 }
 
+/* Botão do Formulário */
 .btn-submit {
-    background-color: var(--azul-destaque);
-    color: #ffffff;
+    background-color: #ffffff;
+    color: var(--azul-foton);
     border: none;
     padding: 18px 40px;
     border-radius: 50px;
@@ -440,39 +458,45 @@ html {
 }
 
 .btn-submit:hover {
-    background-color: #ffffff;
-    color: var(--azul-hover);
+    background-color: var(--azul-destaque);
+    color: #ffffff;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(102, 179, 255, 0.4);
 }
 
-/* Mapas na base */
+/* Mapas Lado a Lado */
 .maps-container {
     display: flex;
-    width: 100%;
-    height: 400px;
-    margin-top: 60px;
+    max-width: 1400px;
+    margin: 180px auto 0;
+    padding: 0 80px 80px 80px; 
+    gap: 40px;
+    height: 500px;
+    position: relative;
+    z-index: 1;
 }
 
 .map-box {
     flex: 1;
     height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 100, 0.1);
 }
 
 .map-box iframe {
     width: 100%;
     height: 100%;
     border: none;
-    filter: grayscale(15%);
 }
 
 /* =========================================================
-   FOOTER
+   FOOTER (TEMA FOTON)
    ========================================================= */
 .footer-section {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000a1a; /* Quase preto, com tom de azul */
     padding: 80px 110px 30px;
+    color: rgba(255,255,255,0.7);
     position: relative;
     z-index: 10;
 }
@@ -480,6 +504,7 @@ html {
 .footer-content {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 50px;
     margin-bottom: 30px;
@@ -491,21 +516,51 @@ html {
 }
 
 .footer-brand p {
-    color: rgba(255, 255, 255, 0.6);
     font-size: 0.95rem;
+    max-width: 250px;
 }
 
 .footer-links h4,
+.footer-quote h4,
 .footer-social h4 {
     font-size: 1.2rem;
-    color: var(--azul-destaque);
+    color: #ffffff;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 12px; }
-.footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s; }
+.footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
 .footer-links a:hover { color: var(--azul-destaque); }
+
+/* Caixa de Cotação no Footer */
+.footer-quote p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 250px;
+}
+
+.btn-footer-quote {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--azul-destaque);
+    color: var(--azul-destaque);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-footer-quote:hover {
+    background: var(--azul-destaque);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(102, 179, 255, 0.3);
+}
 
 .social-icons {
     display: flex;
@@ -532,20 +587,177 @@ html {
 .footer-bottom {
     display: flex;
     justify-content: space-between;
-    color: rgba(255, 255, 255, 0.5);
+    align-items: center;
     font-size: 0.85rem;
 }
 
-.watermark span {
-    color: var(--azul-destaque);
-    font-weight: 700;
-}
+.watermark { font-weight: 500; }
+.dev-name { color: var(--azul-destaque); font-weight: 800; letter-spacing: 0.5px; }
 
 /* Responsividade Base */
 @media (max-width: 1024px) {
-    .contato-container { flex-direction: column; padding: 0 40px; gap: 40px; }
+    .contato-container { flex-direction: column; padding: 0 40px; gap: 40px; margin-bottom: 0; }
     .contato-form .form-row { flex-direction: column; gap: 0; }
-    .maps-container { flex-direction: column; height: 600px; margin-top: 40px; }
-    .footer-content { flex-direction: column; gap: 40px; }
-    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+    .maps-container { flex-direction: column; height: 800px; padding: 0 40px 60px; margin-top: 50px; }
+    .footer-section { padding: 60px 40px 30px; }
+    .footer-content { flex-direction: column; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
+}
+/* Estilo para os telefones na Section 4 */
+.telefone-unidade {
+    margin-left: 34px;
+    margin-top: 5px;
+    color: #000 !important;
+}
+.telefone-unidade a {
+    color: var(--azul-foton);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* MODAL / POP-UP */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%; max-width: 450px;
+    position: relative;
+    color: var(--azul-hover);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: none; border: none;
+    font-size: 30px; cursor: pointer;
+    color: #999;
+}
+
+.modal-content h3 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: var(--azul-foton);
+}
+
+.modal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.modal-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-item-info strong { font-size: 1.1rem; }
+
+.btn-call {
+    background: var(--azul-foton);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-call:hover { background: var(--azul-destaque); transform: scale(1.05); }
+.modal-divider { height: 1px; background: #eee; margin: 10px 0; 
+}
+/* =========================================================
+   PÁGINA DO PRODUTO (AJUSTES FINOS)
+   ========================================================= */
+
+.product-showcase {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+
+.showcase-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh; 
+    background: linear-gradient(180deg, var(--azul-hover) 0%, var(--azul-foton) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Marca d'água BRANCA e mais aparente conforme solicitado */
+.showcase-watermark {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20vw;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4); /* Branco com opacidade para aparecer bem */
+    white-space: nowrap;
+    user-select: none;
+    margin-top: 40px;
+}
+
+.showcase-image-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 900px; /* Diminuído para a imagem não ficar gigante */
+    margin: 28vh auto 0; 
+    display: flex;
+    justify-content: center;
+}
+
+/* Imagem do caminhão menor e centralizada */
+.showcase-truck {
+    width: 90%; /* Ajuste de escala */
+    height: auto;
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.3));
+    animation: truckEnter 1.5s var(--bezier) forwards;
+}
+
+@keyframes truckEnter {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.showcase-bottom {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 60px 20px 100px 20px;
+}
+
+.showcase-main-title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--azul-hover);
+    margin-bottom: 20px;
+}
+
+/* Garante que a navbar na subpágina tenha o mesmo espaçamento da Home */
+.aumark-page .navbar-container {
+    padding: 30px 60px;
 }
